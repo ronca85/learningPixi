@@ -292,10 +292,10 @@ If you want to find the width or the height of the `renderer`, use
 
 To change the size of the canvas, use the `renderer`’s `resize`
 method, and supply any new `width` and `height` values. But, to make
-sure the canvas is resized to match the resolution, set `autoResize`
+sure the canvas is resized to match the resolution, set `autoDensity`
 to `true`.
 ```js
-app.renderer.autoResize = true;
+app.renderer.autoDensity = true;
 app.renderer.resize(512, 512);
 ```
 If you want to make the canvas fill the entire window, you can apply this
@@ -303,7 +303,7 @@ CSS styling and resize the renderer to the size of the browser window.
 ```
 app.renderer.view.style.position = "absolute";
 app.renderer.view.style.display = "block";
-app.renderer.autoResize = true;
+app.renderer.autoDensity = true;
 app.renderer.resize(window.innerWidth, window.innerHeight);
 ```
 But, if you do that, make sure you also set the default padding and
@@ -2117,9 +2117,9 @@ what I've described here. Check the current [`ParticleContainer`
 documentation](http://pixijs.download/release/docs/PIXI.particles.ParticleContainer.html) for details.
 
 Where you create a `ParticleContainer`, there are four optional
-arguments you can provide: `size`, `properties`, `batchSize` and `autoResize`.
+arguments you can provide: `size`, `properties`, `batchSize` and `autoDensity`.
 ```js
-let superFastSprites = new ParticleContainer(maxSize, properties, batchSize, autoResize);
+let superFastSprites = new ParticleContainer(maxSize, properties, batchSize, autoDensity);
 ```
 The default value for `maxSize` is 1500. So, if you need to contain more
 sprites, set it to a higher number. The `properties` argument is an object
@@ -2153,7 +2153,7 @@ mapped onto a 3D surface. `U` is the `x` axis and `V` is the `y` axis.
 WebGL already uses `x`, `y` and `z` for 3D spatial positioning, so `U`
 and `V` were chosen to represent `x` and `y` for 2D image textures.)
 
-(I'm not sure what exactly what those last two optional arguments, `batchSize` and `autoResize`, so if anyone knows, please us know in the Issues!)
+(I'm not sure what exactly what those last two optional arguments, `batchSize` and `autoDensity`, so if anyone knows, please us know in the Issues!)
 
 <a id='graphic'></a>
 Pixi's Graphic Primitives
